@@ -1,0 +1,17 @@
+---
+sudo: false
+language: node_js
+node_js:
+- '4.0.0'
+after_success:
+- make coveralls
+deploy:
+  provider: npm
+  email: rr.rossmann@gmail.com
+  api_key:
+    secure: lWj2PYd8neN5vQIznTIzxpkvZYJzU1iNHx1UDlqKp7CNZF7c+5mElZfOjLTOGY4EH4pnRIJcGcW7t2XPQCzzBi1/Yr/l4QJe+VIqaaGgATz9tzgFvrbWVdLGu8LxPdp5vAc6Ibdw2uB4FAc1sTR1q3/mv/AkJnHMLWz/StzKfxZ7IZcj2fhQl6wQ1BF5aAAuzxBOncvuGo3CAmFnnqKNcAZLC/ImGWM0kIZGzMCBJ8svq8TbUBqFhS/P2dzQEBp8XX5PlOVSAbYp2d+muNsIr0uRXPXrj1OAfblv8sTlMBfI5k4y+yJXQpFsDxFBZOK4G8qIkHQM46ty7yV2GyYRb5Yg12cWSXgxTjWbX11SHeyNWZBknvbVdFzwy2QrhYzi/FnlnJdhFi9pwFqPdZGcWQuAIQjgeO+SNUnlUPsg9rFmifvuoghHLjns7B5ly6WEC/wNdh8i1FOFCsnaWX0wtYV5OTI3zQRgs4ZmyrcmpkMIJhcpCQe+SznSzUQRPydHvZ4hkz2ZjsbXusDTdunKwM0XxWSqbjQQl0z7o0NqoSOyH5h3sr53l2bhZkfokjiJckqaUDY6nCc5RpgXtwdee/LBWsY9sVsm4LnQWormd1bhHREXlkUkF71Y7wHP5eNHTxBC9IvdccJsMhMEXOlYffdIbMyLQUl0x3iIccazvzM=
+  on:
+    tags: true
+    node: '4.0.0'
+    repo: Dreamscapes/sails-hook-events
+    all_branches: true
