@@ -13,7 +13,9 @@
 
 This hook allows you to use event-driven programming when working with your Waterline models. It adds new events emitted from the global `sails` object that you can subscribe to and perform actions when such an event is emitted.
 
-## Events added
+## Usage
+
+### Events added
 
 The events are named separately for each model you have defined. they have the following structure:
 
@@ -29,6 +31,29 @@ To put it all together, here are some examples of events emitted:
 
 - `user:created`
 - `order:updated`
+
+### Example usage
+
+```js
+// First, set up an event handler to listen for newly created users
+
+// Assuming you have sails exposed as global property
+sails.on('user:created', model => {
+  // model is the object which has been created in the database
+  //  with all its properties etc.
+
+  // Perhaps send this user an email? We will use an imaginary
+  // email service in our app:
+  sails.services.email.send({ to: model.email, subject: 'Welcome' }, 'emails/welcome')
+})
+
+// And here is the code which will trigger the above event
+
+sails.models.user.create({ email: 'user@example.com' })
+.then(user => {
+  // ...
+})
+```
 
 ## Installation
 
