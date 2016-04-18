@@ -32,7 +32,7 @@
     "waterline"
   ],
   "license": "BSD-3-Clause",
-  "main": "lib/events.js",
+  "main": "lib/events",
   "repository": {
     "type": "git",
     "url": "git://github.com/Dreamscapes/sails-hook-events.git"
