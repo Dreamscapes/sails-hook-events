@@ -11,11 +11,11 @@
 /**
  * A dummy user to test our events
  */
-module.exports =
-{ attributes:
-  { username:
-    { type: 'string'
-    , required: true
+module.exports = {
+  attributes: {
+    username: {
+      type: 'string',
+      required: true
     }
   }
 }

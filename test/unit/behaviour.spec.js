@@ -8,14 +8,15 @@
 
 'use strict'
 
-describe('Behaviour', function () {
-
+describe('Behaviour', function() {
   let User
 
-  before(() => User = sails.models.user)
+  before(function() {
+    User = sails.models.user
+  })
 
 
-  it('model:created event', function (done) {
+  it('model:created event', function(done) {
     sails.once('user:created', model => {
       model.should.have.property('username', 'Robert')
 
@@ -24,10 +25,9 @@ describe('Behaviour', function () {
 
     User.create({ username: 'Robert' })
     .catch(done)
-
   })
 
-  it('model:updated event', function (done) {
+  it('model:updated event', function(done) {
     sails.once('user:updated', model => {
       model.should.have.property('username', 'Trebor')
 
@@ -38,7 +38,7 @@ describe('Behaviour', function () {
     .catch(done)
   })
 
-  it('model:destroyed event', function (done) {
+  it('model:destroyed event', function(done) {
     sails.once('user:destroyed', model => {
       model.should.have.property('username', 'Trebor')
 

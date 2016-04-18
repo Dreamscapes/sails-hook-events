@@ -10,26 +10,25 @@
 
 const initialiser = require('../../lib/events')
 
-
-describe('Initialiser', function () {
-
-  it('should be a function', function () {
+describe('Initialiser', function() {
+  it('should be a function', function() {
     initialiser.should.be.Function()
   })
 
-  it('should export an object', function () {
+  it('should export an object', function() {
     initialiser().should.be.Object()
   })
 
 
-  describe('.initalize()', function () {
-
+  describe('.initalize()', function() {
     let hook
 
-    before(() => hook = initialiser())
+    before(function() {
+      hook = initialiser()
+    })
 
 
-    it('should exist', function () {
+    it('should exist', function() {
       hook.should.have.property('initialize').and.be.Function()
     })
   })

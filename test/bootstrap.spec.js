@@ -9,55 +9,55 @@
 'use strict'
 
 const path = require('path')
-    , initialiser = require('../lib/events')
-    , Sails = require('sails').constructor
+const initialiser = require('../lib/events')
+const server = require('sails')
 
 
-before((done) => {
-  const config =
-        { hooks:
-          { events: initialiser
-          // Disable most of the core hooks as they play no role in the tests
-          , blueprints: false
-          , controllers: false
-          , cors: false
-          , csrf: false
-          , grunt: false
-          , http: false
-          , i18n: false
-          , logger: false
-          , policies: false
-          , pubsub: false
-          , request: false
-          , responses: false
-          , services: false
-          , session: false
-          , sockets: false
-          , views: false
-          }
-        , log:
-          { level: 'error'
-          }
-        , globals:
-          { _: false
-          , async: false
-          , models: false
-          }
-        , models:
-          { connection: 'memory'
-          , migrate: 'alter'
-          }
-        , connections:
-          { memory:
-            { adapter: 'sails-memory'
-            }
-          }
-        , paths:
-          { models: path.join('.', 'test', 'models')
-          }
-        }
+before(function(done) {
+  const config = {
+    hooks: {
+      events: initialiser,
+      // Disable most of the core hooks as they play no role in the tests
+      blueprints: false,
+      controllers: false,
+      cors: false,
+      csrf: false,
+      grunt: false,
+      http: false,
+      i18n: false,
+      logger: false,
+      policies: false,
+      pubsub: false,
+      request: false,
+      responses: false,
+      services: false,
+      session: false,
+      sockets: false,
+      views: false
+    },
+    log: {
+      level: 'error'
+    },
+    globals: {
+      _: false,
+      async: false,
+      models: false
+    },
+    models: {
+      connection: 'memory',
+      migrate: 'alter'
+    },
+    connections: {
+      memory: {
+        adapter: 'sails-memory'
+      }
+    },
+    paths: {
+      models: path.join('.', 'test', 'models')
+    }
+  }
 
-  new Sails().load(config, done)
+  server.load(config, done)
 })
 
-after(done => sails.lower(done))
+after(done => server.lower(done))
