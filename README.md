@@ -11,7 +11,7 @@
 
 ## Description
 
-This hook allows you to use event-driven programming when working with your Waterline models. It adds new events emitted from the global `sails` object that you can subscribe to and perform actions when such an event is emitted.
+This hook allows you to use event-driven programming when working with your Waterline models. It adds new events emitted from your Sails.js instance that you can subscribe to and perform actions when such an event is emitted.
 
 ## Usage
 
