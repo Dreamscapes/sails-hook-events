@@ -10,6 +10,7 @@
   "contributors": [],
   "dependencies": {},
   "devDependencies": {
+    "@strv/eslint-config-javascript": "^3.2.1",
     "coveralls": "^2.11.4",
     "eslint": "^2.8.0",
     "istanbul": "^0.4.0",
