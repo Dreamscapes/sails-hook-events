@@ -19,4 +19,5 @@ ghuser = Alaneor
 lintfiles = lib test
 testflags += --require should
 testflags += --recursive
+testflags += --no-exit
 testflags += --globals sails,FILE_PARSER_LOGGER_ENABLED
