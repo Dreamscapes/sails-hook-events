@@ -1,7 +1,7 @@
 {
   "name": "sails-hook-events",
   "description": "Use events to manage and observe Waterline models' lifecycle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Robert Rossmann",
     "email": "rr.rossmann@me.com"
