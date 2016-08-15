@@ -12,7 +12,7 @@
   "devDependencies": {
     "@strv/eslint-config-javascript": "^3.2.1",
     "coveralls": "^2.11.4",
-    "eslint": "^2.8.0",
+    "eslint": "^3.3.1",
     "istanbul": "^0.4.0",
     "mocha": "^2.4.0",
     "mocha-lcov-reporter": "^0.0.2",
