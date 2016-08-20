@@ -10,7 +10,7 @@
 
 module.exports = {
   extends: [
-    '@strv/javascript/environments/nodejs/latest',
+    '@strv/javascript/environments/nodejs/v5',
     '@strv/javascript/environments/nodejs/best-practices',
     '@strv/javascript/environments/nodejs/optional',
     '@strv/javascript/coding-styles/base'
